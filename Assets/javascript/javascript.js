@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         $("#submit").on("click", function(event) {
 
-            // Storing our giphy API URL for a random cat image
+            // Storing our giphy API URL for an image specified in the food input box
             event.preventDefault()
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
             var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+foodSearch;
@@ -61,16 +61,14 @@ $(document).ready(function() {
                 // Creating and storing an image tag
                 var gifImage = $("<img>");
         
-                // Setting the catImage src attribute to imageUrl
+                // Setting the gifImage src attribute to imageUrl
                 gifImage.attr("src", imageUrl);
                 gifImage.attr("alt", "Gif Image");
         
-                // Prepending the gifImage to the images div
-                $("#gifImages").html(gifImage);
+                // Attaching the gifImage to the gifImages div
+                $("#gifResults").html(gifImage);
               });
           });
-
-        // Mani's code ends here!
 
 
 
