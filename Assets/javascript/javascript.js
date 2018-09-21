@@ -20,17 +20,16 @@ $(document).ready(function() {
                         var compAddress = data.businesses[i].location.display_address;
                         
     
-                        $("#api-results").append("<p>" + compName + "<br>" + compRating + "<br>" + compAddress + "</p>");
+                        $("#api-results").append("<p>" + compName + "<br>" + compRating + "<br>" + compAddress + "</p>" + "<br>");
                         console.log("The returned data", data);
                     //company name, rating, address
                     };
                     
                 },
                 beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization', 'Bearer ' + apiKEY); }
-                
-                
-                
+               
             });
+
            
         });
     
