@@ -31,8 +31,51 @@ $(document).ready(function() {
                 
                 
             });
+
+
            
         });
+
+        // Mani's code begins here!
+
+        $("#submit").on("click", function(event) {
+
+            // Storing our giphy API URL for a random cat image
+            event.preventDefault()
+            var foodSearch = $("#food-input").val().replace(" ", "-").trim();
+            var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+foodSearch;
+            console.log(queryURL);
+        
+            // Perfoming an AJAX GET request to our queryURL
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            })
+        
+            // After the data from the AJAX request comes back
+              .then(function(response) {
+        
+              // Saving the image_original_url property
+                var imageUrl = response.data.image_original_url;
+        
+                // Creating and storing an image tag
+                var gifImage = $("<img>");
+        
+                // Setting the catImage src attribute to imageUrl
+                gifImage.attr("src", imageUrl);
+                gifImage.attr("alt", "Gif Image");
+        
+                // Prepending the gifImage to the images div
+                $("#gifImages").html(gifImage);
+              });
+          });
+
+        // Mani's code ends here!
+
+
+
+
+
     
     
     });
