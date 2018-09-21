@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Finders</title>
+
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/images/favicon.ico">
+  
+    <!--BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+     <script type="text/javascript" src="Assets/Javascript/javascript.js"></script>
+
+</head>
+
+<body>
+    <br>
+
+<div id="jumbotron" class="container">        
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Food Finders!</h1>
+            <p class="lead">Search for your favorite food in your favorite places</p>
+
+
+            
+
+            <form>
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="food-input" placeholder="Food">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="location-input" placeholder="Location">
+                  </div>
+
+                  <button type="submit" class="btn btn-warning" id="submit">Search</button>
+                </div>
+              </form>
+
+        </div>
+        
+      
+    </div>
+</div>
+    <div id="jumbotron" class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div id="api-results">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
