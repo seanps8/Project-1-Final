@@ -21,28 +21,25 @@ $(document).ready(function() {
                         var compAddress = data.businesses[i].location.display_address;
                         
     
-                        $("#api-results").append("<p>" + compName + "<br>" + compRating + "<br>" + compAddress + "</p>");
-                        console.log("The returned data", data);
+                        // $("#api-results").append("<p>" + compName + "<br>Rating: " + compRating + " Stars<br>" + compAddress + "</p>");
+
+                        // $("#api-results").append(`<p> ${compName} `\n` Rating: ${compRating} `\n` ${compAddress} </p>`); 
+
+                        // concatenating the results into one line
+                        $("#api-results").append(`<p> ${compName} | Rating: ${compRating} | ${compAddress} </p>`); 
+
+
+                        // console.log("The returned data", data);
                     //company name, rating, address
                     };
-                    
+                    console.log("The returned data", data);
+
                 },
                 beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization', 'Bearer ' + apiKEY); }
                 
                 
                 
             });
-
-
-           
-        });
-
-        // Mani's code begins here!
-
-        $("#submit").on("click", function(event) {
-            Initialize();
-            // Storing our giphy API URL for an image specified in the food input box
-            event.preventDefault()
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
             var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=pg-13&tag="+foodSearch;
         
@@ -68,7 +65,11 @@ $(document).ready(function() {
                 // Attaching the gifImage to the gifImages div
                 $("#gifResults").html(gifImage);
               });
-          });
+
+
+           
+        });
+
 
           function Initialize() {
             $("#gifResults").empty();
