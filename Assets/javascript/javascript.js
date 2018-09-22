@@ -8,7 +8,9 @@ $(document).ready(function() {
             var city = $("#location-input").val().trim();
             var foodCat = $("#food-input").val().trim();
             var apiKEY = "WXvXh_2X02Ed3bRqbc0N4e0xnIKUP1zNlEwQgMHXlZw60jRCNGjxavi8ID5P9eaDDeC3y2TXKYoDlsLSfdmi4mCWn5LbNqpXMA7qNwrlv9Fq1tbIE7SRQ0kdSzmdW3Yx";
-            
+            if (city === "") {
+                
+            }
             
             $.ajax({
                 url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&limit=10&categories=" + foodCat + "&sort_by=rating",
@@ -31,17 +33,6 @@ $(document).ready(function() {
                
             });
 
-
-           
-        });
-
-        // Mani's code begins here!
-
-        $("#submit").on("click", function(event) {
-
-            // Storing our giphy API URL for an image specified in the food input box
-            event.preventDefault()
-            Initialize();
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
             var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+foodSearch;
             console.log(queryURL);
@@ -56,7 +47,8 @@ $(document).ready(function() {
               .then(function(response) {
         
               // Saving the image_original_url property
-                var imageUrl = response.data.image_original_url;
+              console.log(response);
+                var imageUrl = response.data.images.fixed_height.url;
         
                 // Creating and storing an image tag
                 var gifImage = $("<img>");
@@ -68,12 +60,21 @@ $(document).ready(function() {
                 // Attaching the gifImage to the gifImages div
                 $("#gifResults").html(gifImage);
               });
-          });
+
+
+           
+        });
+
+        // Mani's code begins here!
+
+        
 
           function Initialize() {
               $("#gifResults").empty();
               $("#api-results").empty();
           };
+
+          
 
 
 
