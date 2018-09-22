@@ -2,7 +2,7 @@ $(document).ready(function() {
     console.log("ready");
     
         $("#submit").on("click", function(event) {
-             Initialize;
+             Initialize();
             event.preventDefault();
             
             var city = $("#location-input").val().trim();
@@ -40,7 +40,7 @@ $(document).ready(function() {
         // Mani's code begins here!
 
         $("#submit").on("click", function(event) {
-            Initialize;
+            Initialize();
             // Storing our giphy API URL for an image specified in the food input box
             event.preventDefault()
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
