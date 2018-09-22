@@ -2,6 +2,7 @@ $(document).ready(function() {
     console.log("ready");
     
         $("#submit").on("click", function(event) {
+             Initialize();
             event.preventDefault();
             
             var city = $("#location-input").val().trim();
@@ -39,12 +40,11 @@ $(document).ready(function() {
         // Mani's code begins here!
 
         $("#submit").on("click", function(event) {
-
+            Initialize();
             // Storing our giphy API URL for an image specified in the food input box
             event.preventDefault()
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
-            var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+foodSearch;
-            console.log(queryURL);
+            var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=pg-13&tag="+foodSearch;
         
             // Perfoming an AJAX GET request to our queryURL
             $.ajax({
@@ -56,10 +56,10 @@ $(document).ready(function() {
               .then(function(response) {
         
               // Saving the image_original_url property
-                var imageUrl = response.data.image_original_url;
+                var imageUrl = response.data.images.fixed_height.url;
         
                 // Creating and storing an image tag
-                var gifImage = $("<img>");
+                var gifImage = $("<img style= width:250px; height:250px>");
         
                 // Setting the gifImage src attribute to imageUrl
                 gifImage.attr("src", imageUrl);
@@ -70,7 +70,10 @@ $(document).ready(function() {
               });
           });
 
-
+          function Initialize() {
+            $("#gifResults").empty();
+            $("#api-results").empty();
+        }
 
 
 
