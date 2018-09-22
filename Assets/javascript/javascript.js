@@ -4,6 +4,7 @@ $(document).ready(function() {
         $("#submit").on("click", function(event) {
              Initialize();
             event.preventDefault();
+            document.getElementById("totalBody").style.visibility = "visible";
             
             var city = $("#location-input").val().trim();
             var foodCat = $("#food-input").val().trim();

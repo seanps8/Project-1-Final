@@ -21,7 +21,11 @@ p {
 
 
 .jumbotron-fluid {
-	border-radius: 5px;
+	border-radius: 5px !important;
+}
+
+#totalBody{
+	visibility: hidden;
 }
 
 
