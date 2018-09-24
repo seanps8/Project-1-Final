@@ -2,7 +2,6 @@ $(document).ready(function() {
     console.log("ready");
     
         $("#submit").on("click", function(event) {
-             Initialize();
             event.preventDefault();
             Initialize();
             document.getElementById("totalBody").style.visibility = "visible";
