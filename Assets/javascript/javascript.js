@@ -4,19 +4,14 @@ $(document).ready(function() {
         $("#submit").on("click", function(event) {
              Initialize();
             event.preventDefault();
-<<<<<<< HEAD
             Initialize();
-=======
             document.getElementById("totalBody").style.visibility = "visible";
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
             
             var city = $("#location-input").val().trim();
             var foodCat = $("#food-input").val().trim();
             var apiKEY = "WXvXh_2X02Ed3bRqbc0N4e0xnIKUP1zNlEwQgMHXlZw60jRCNGjxavi8ID5P9eaDDeC3y2TXKYoDlsLSfdmi4mCWn5LbNqpXMA7qNwrlv9Fq1tbIE7SRQ0kdSzmdW3Yx";
-<<<<<<< HEAD
-            if (city === "") {
+           
                 
-=======
             
             if (city === "" || foodCat === "" || foodSearch === "") {
                 var modal = document.getElementById('myModal');
@@ -40,7 +35,6 @@ $(document).ready(function() {
                         modal.style.display = "none";
                     }
                 }
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
             }
             
             $.ajax({
@@ -52,22 +46,20 @@ $(document).ready(function() {
                         var compName = data.businesses[i].name;
                         var compRating = data.businesses[i].rating;
                         var compAddress = data.businesses[i].location.display_address;
+                        var reviewCount = data.businesses[i].review_count;
                         
     
-<<<<<<< HEAD
-                        $("#api-results").append("<p>" + compName + "<br>" + compRating + "<br>" + compAddress + "</p>" + "<br>");
-                        console.log("The returned data", data);
-=======
+                        // $("#api-results").append("<p>" + compName + "<br>" + compRating + "<br>" + compAddress + "</p>" + "<br>");
+                        
                         // $("#api-results").append("<p>" + compName + "<br>Rating: " + compRating + " Stars<br>" + compAddress + "</p>");
 
                         // $("#api-results").append(`<p> ${compName} `\n` Rating: ${compRating} `\n` ${compAddress} </p>`); 
 
                         // concatenating the results into one line
-                        $("#api-results").append(`<p> ${compName} | Rating: ${compRating} | ${compAddress} </p>`); 
+                        $("#api-results").append(`<p> ${compName} | Rating: ${compRating} | Review Count: ${reviewCount} | ${compAddress} </p>`); 
 
 
                         // console.log("The returned data", data);
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
                     //company name, rating, address
                     };
                     console.log("The returned data", data);
@@ -76,10 +68,7 @@ $(document).ready(function() {
                 beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization', 'Bearer ' + apiKEY); }
                
             });
-<<<<<<< HEAD
 
-=======
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
             var foodSearch = $("#food-input").val().replace(" ", "-").trim();
             var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=pg-13&tag="+foodSearch;
         
@@ -93,10 +82,7 @@ $(document).ready(function() {
               .then(function(response) {
         
               // Saving the image_original_url property
-<<<<<<< HEAD
               console.log(response);
-=======
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
                 var imageUrl = response.data.images.fixed_height.url;
         
                 // Creating and storing an image tag
@@ -109,7 +95,6 @@ $(document).ready(function() {
                 // Attaching the gifImage to the gifImages div
                 $("#gifResults").html(gifImage);
               });
-<<<<<<< HEAD
 
 
            
@@ -125,11 +110,9 @@ $(document).ready(function() {
           };
 
           
-=======
->>>>>>> ed6f09d4227394ad6f1d56be9112817f7a311377
 
 
-           
+         
         });
 
 
@@ -142,4 +125,4 @@ $(document).ready(function() {
 
     
     
-    });
+   
