@@ -50,8 +50,9 @@ p {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    border: 2px solid #888 !important;
+    width: 80% !important;
+    font-size: 25px;
 }
 
 /* The Close Button */
